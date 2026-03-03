@@ -19,7 +19,7 @@ try:
 except:
     print("Something went wrong , enter a valid number so i can calculate an area of a circle for you")    
 
-# 2. Circle Class
+# 2. Rectangle Class
 class Rectangle:
     """A class used to represent a Rectangle geometry."""
 
