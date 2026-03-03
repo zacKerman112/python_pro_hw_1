@@ -1,7 +1,6 @@
 import math
 
 
-# 1. Circle Program
 def area(radius: float) -> float:
     """
     Calculates the area of a circle.
@@ -21,7 +20,6 @@ except:
     print("Something went wrong , enter a valid number so i can calculate an area of a circle for you")    
 
 
-# 2. Rectangle Class
 class Rectangle:
     """A class used to represent a Rectangle geometry."""
 
@@ -58,12 +56,11 @@ class Rectangle:
         print(f"The rectangle is resized to {new_height}x{new_width}")
 
 
-# 3. Testing
+
 rect = Rectangle(8 , 9)
 print(f"Initial dimensions: {rect.width}x{rect.height}")
 print(f"The Area: {rect.rect_area()}")
 
-# Fixed the spelling of "square"
 print(f"Is it a square? {rect.is_square()}")
 
 rect.resize(8 , 8)
