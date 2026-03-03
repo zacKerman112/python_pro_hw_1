@@ -56,7 +56,6 @@ class Rectangle:
         print(f"The rectangle is resized to {new_height}x{new_width}")
 
 
-
 rect = Rectangle(8 , 9)
 print(f"Initial dimensions: {rect.width}x{rect.height}")
 print(f"The Area: {rect.rect_area()}")
