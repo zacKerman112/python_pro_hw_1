@@ -1,42 +1,68 @@
 import math
 
 
-def calculate_circle_area(radius: float) -> float:
+def area(radius: float) -> float:
+    """
+    Calculate the area of a circle.
+
+    Args:
+        radius (float): The distance from the center to the edge.
+
+    Returns:
+        float: The total area of the circle.
+    """
     return math.pi * (radius ** 2)
 
 
+try:
+    user_radius = float(
+        input("Enter you radius so i can calculate the area of a circle with your radius: ")
+    )
+    circle_area = area(user_radius)
+    print(f"The area of a circle with a radius of {user_radius}: {circle_area}")
+except ValueError:
+    print("Something went wrong, enter a valid number so i can calculate an area.")
+
+
 class Rectangle:
+    """A class used to represent a Rectangle geometry."""
+
     def __init__(self, width: float, height: float):
+        """Initialise the rectangle with height and width."""
         self.width = width
         self.height = height
 
-    def get_area(self) -> float:
+    def rect_area(self) -> float:
+        """Calculate area by multiplying height by width."""
         return self.height * self.width
 
-    def get_perimeter(self) -> float:
+    def rect_perimeter(self) -> float:
+        """Calculate perimeter with height plus width doubled."""
         return 2 * (self.height + self.width)
 
     def is_square(self) -> bool:
+        """Check if the rectangle with given sides is square."""
         return self.height == self.width
 
     def resize(self, new_width: float, new_height: float) -> None:
+        """
+        Update rectangle dimensions.
+
+        Args:
+            new_width (float): The updated value of width.
+            new_height (float): The updated value of height.
+        """
         self.height = new_height
         self.width = new_width
-        print(f"Resized to: {new_height}x{new_width}")
+        print(f"The rectangle is resized to {new_height}x{new_width}")
 
 
-if __name__ == "__main__":
-    try:
-        user_radius = float(input("Enter radius: "))
-        print(f"Circle area: {calculate_circle_area(user_radius)}")
-    except ValueError:
-        print("Error: Invalid number")
+rect = Rectangle(8, 9)
+print(f"Initial dimensions: {rect.width}x{rect.height}")
+print(f"The Area: {rect.rect_area()}")
+print(f"Is it a square? {rect.is_square()}")
 
-    print("-" * 20)
-
-    rect = Rectangle(8, 9)
-    print(f"Rect: {rect.width}x{rect.height}, Area: {rect.get_area()}")
-    
-    rect.resize(10, 10)
-    print(f"New Area: {rect.get_area()}")
-    print(f"Is square: {rect.is_square()}")
+rect.resize(10, 10)
+print(f"The new area: {rect.rect_area()}")
+print(f"The new perimeter: {rect.rect_perimeter()}")
+print(f"Is it a square now? {rect.is_square()}")
